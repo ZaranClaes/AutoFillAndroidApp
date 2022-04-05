@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/employeeID1Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/employeeID2Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+    <TextView
+        android:id="@+id/employeeID3Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"/>
+    <EditText
+        android:id="@+id/employeeID1Enter"
+        android:hint="ID1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+    <EditText
+        android:id="@+id/employeeID2Enter"
+        android:hint="ID2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"/>
+    <EditText
+        android:id="@+id/employeeID3Enter"
+        android:hint="ID3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"/>
+    <Button
+        android:id="@+id/UpdateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="UpdateProtocol"
+        android:text="Update Employee IDs"
+        android:layout_marginTop="250dp"/>
+    <Button
+        android:id="@+id/SendTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="SendData"
+        android:text="Send To Website"
+        android:layout_marginTop="300dp"/>
+    <Button
+        android:id="@+id/ClearData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ClearProtocol"
+        android:text="Clear"
+        android:layout_marginTop="350dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="Welcome to the app\nIf first time using, press 'Clear'\nAfterwards, enter up three ID #s\n'Send to Website' immediately fills \nin the form for all numbers\nTo schedule to fill in every day,\nSwipe left, and set time\n\n\nHope you enjoy! -Zar"
+        android:textSize="15sp"
+        android:layout_centerHorizontal="true"/>
+
+
+
+</RelativeLayout>
