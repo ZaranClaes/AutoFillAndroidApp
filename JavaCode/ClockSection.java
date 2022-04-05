@@ -79,9 +79,15 @@ public class ClockSection extends AppCompatActivity {
 
         Intent intent = new Intent(this, MyAlarm.class);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0 , intent, 0);
+        if (Build.VERSION.SDK_INT >= 23) {
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0 , intent, PendingIntent.FLAG_IMMUTABLE);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent);
+        }
+        else{
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0 , intent, 0);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent);
+        }
 
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent);
 
         Toast.makeText(this, "Alarm is Set", Toast.LENGTH_SHORT).show();
     }
@@ -91,9 +97,17 @@ public class ClockSection extends AppCompatActivity {
 
         Intent intent = new Intent(this, MyAlarm.class);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0 , intent, 0);
-        if (alarmManager != null) {
-            alarmManager.cancel(pendingIntent);
+        if (Build.VERSION.SDK_INT >= 23) {
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0 , intent, PendingIntent.FLAG_IMMUTABLE);
+            if (alarmManager != null) {
+                alarmManager.cancel(pendingIntent);
+            }
+        }
+        else{
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0 , intent, 0);
+            if (alarmManager != null) {
+                alarmManager.cancel(pendingIntent);
+            }
         }
 
     }
