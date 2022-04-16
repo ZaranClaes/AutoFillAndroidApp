@@ -1,7 +1,8 @@
-package com.example.autofillversion1official;
+com.example.autofillversion1official;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -44,21 +45,25 @@ public class GoOnline extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView webView, String url) {
                 //webView.loadUrl("javascript:document.getElementById('763128014').value = '" + employeeID1 + "';");
+                    webView.loadUrl("javascript:(function() { document.getElementById('62391608_516129376').click(); " +
+                            "document.getElementById('62391605').value = '" + employeeID + "'; " +
+                            "document.getElementById('62391610_516129380').click(); " +
+                            "document.getElementById('62391606').value = '" + temperature + "';" +
+                            "document.getElementById('62391616_516129418').click();" +
+                            "document.getElementById('62391993_516132409').click();" +
+                            "document.getElementById('62391615_516129447').click();" +
+                            "document.getElementById('62391617_516129442').click();" +
+                            "document.getElementById('62391607_516129368').click();" +
+                            "document.getElementsByClassName('btn small next-button survey-page-button user-generated notranslate')[0].click(); ;})()");
 
-                webView.loadUrl("javascript:(function() { document.getElementById('62391608_516129376').click(); " +
-                        "document.getElementById('62391605').value = '" + employeeID + "'; " +
-                        "document.getElementById('62391610_516129380').click(); " +
-                        "document.getElementById('62391606').value = '" + temperature + "';" +
-                        "document.getElementById('62391616_516129418').click();" +
-                        "document.getElementById('62391615_516129447').click();" +
-                        "document.getElementById('62391617_516129442').click();" +
-                        "document.getElementById('62391607_516129368').click();" +
-                        "document.getElementsByClassName('btn small next-button survey-page-button user-generated notranslate')[0].click(); ;})()");
                 webUrl = webView.getUrl();
 
                 if (webUrl.equals(doneUrl)){
                     Intent h = new Intent(GoOnline.this, GoOnlineTwo.class);
-                    startActivity(h);
+                    h.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        startActivity(h);
+                    }
                 }
 
             }
@@ -85,5 +90,4 @@ public class GoOnline extends AppCompatActivity {
         webSettings.setBuiltInZoomControls(enabled);
     }
 }
-
 
