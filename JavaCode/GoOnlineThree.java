@@ -51,6 +51,7 @@ public class GoOnlineThree extends AppCompatActivity {
                         "document.getElementById('62391610_516129380').click(); " +
                         "document.getElementById('62391606').value = '" + temperature + "';" +
                         "document.getElementById('62391616_516129418').click();" +
+                        "document.getElementById('62391993_516132409').click();" +
                         "document.getElementById('62391615_516129447').click();" +
                         "document.getElementById('62391617_516129442').click();" +
                         "document.getElementById('62391607_516129368').click();" +
@@ -58,9 +59,11 @@ public class GoOnlineThree extends AppCompatActivity {
                 webUrl = webView.getUrl();
 
                 if (webUrl.equals(doneUrl)) {
+
                     Intent h = new Intent(GoOnlineThree.this, MainActivity.class);
                     startActivity(h);
                     finish();
+                    WakeLocker.release();
                 }
 
             }
