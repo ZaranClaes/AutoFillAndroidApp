@@ -24,23 +24,24 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"/>
+
     <EditText
         android:id="@+id/employeeID1Enter"
-        android:hint="ID1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="100dp"
+        android:hint="Your ID" />
     <EditText
         android:id="@+id/employeeID2Enter"
-        android:hint="ID2"
+        android:text="000000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="130dp"/>
     <EditText
         android:id="@+id/employeeID3Enter"
-        android:hint="ID3"
+        android:text="000000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -70,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="400dp"
-        android:text="Welcome to the app\nIf first time using, press 'Clear'\nAfterwards, enter up three ID #s\n'Send to Website' immediately fills \nin the form for all numbers\nTo schedule to fill in every day,\nSwipe left, and set time\n\n\nHope you enjoy! -Zar"
+        android:text="Welcome to the app\nIf first time using, press 'Clear'\nAfterwards, enter up three ID #s\n'Send to Website' immediately fills \nin the form for all numbers\nTo schedule to fill in every day,\nSwipe left, and set time\n To manually fill in go to:\n https://zh.surveymonkey.com/r/EmployeeHealthCheck\nHope you enjoy! -Zar"
         android:textSize="15sp"
         android:layout_centerHorizontal="true"/>
 
