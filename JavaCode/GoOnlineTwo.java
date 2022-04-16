@@ -2,6 +2,7 @@ package com.example.autofillversion1official;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -51,6 +52,7 @@ public class GoOnlineTwo extends AppCompatActivity {
                         "document.getElementById('62391610_516129380').click(); " +
                         "document.getElementById('62391606').value = '" + temperature + "';" +
                         "document.getElementById('62391616_516129418').click();" +
+                        "document.getElementById('62391993_516132409').click();" +
                         "document.getElementById('62391615_516129447').click();" +
                         "document.getElementById('62391617_516129442').click();" +
                         "document.getElementById('62391607_516129368').click();" +
@@ -59,7 +61,9 @@ public class GoOnlineTwo extends AppCompatActivity {
 
                 if (webUrl.equals(doneUrl)) {
                     Intent h = new Intent(GoOnlineTwo.this, GoOnlineThree.class);
-                    startActivity(h);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        startActivity(h);
+                    }
                 }
 
             }
