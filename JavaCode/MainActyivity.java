@@ -2,11 +2,8 @@ package com.example.autofillversion1official;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,29 +15,31 @@ import com.example.autofillversion1official.R;
 public class MainActivity extends AppCompatActivity {
     float x1, x2, y1, y2;
     public String identifierOne,identifierTwo,identifierThree;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        createNotificationChannel();
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
 
-
-    }
-
-    private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            CharSequence name = "AutofillReminderChannel";
-            String description = "Channel for Alarm Manager";
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-            NotificationChannel channel = new NotificationChannel("update",name,importance);
-            channel.setDescription(description);
-
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-
+        identifierOne = sharedPreferences.getString("ID1","");
+        if (identifierOne != null)
+        {
+            TextView txtID1 = findViewById(R.id.employeeID1Text);
+            txtID1.setText(identifierOne);
         }
+        identifierTwo = sharedPreferences.getString("ID2","");
+        if (identifierTwo != null)
+        {
+            TextView txtID2 = findViewById(R.id.employeeID2Text);
+            txtID2.setText(identifierTwo);
+        }
+        identifierThree = sharedPreferences.getString("ID3","");
+        if (identifierThree != null)
+        {
+            TextView txtID3 = findViewById(R.id.employeeID3Text);
+            txtID3.setText(identifierThree);
+        }
+
     }
 
     public void UpdateProtocol (View view){
