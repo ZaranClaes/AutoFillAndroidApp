@@ -55,16 +55,13 @@ public class GoOnlineTwo extends AppCompatActivity {
             public void onPageFinished(WebView webView, String url) {
                 //webView.loadUrl("javascript:document.getElementById('763128014').value = '" + employeeID1 + "';");
 
-                webView.loadUrl("javascript:(function() { document.getElementById('66405067_542650090').click(); " +
-                        "document.getElementById('66405064').value = '" + employeeID + "'; " +
-                        "document.getElementById('66405069_542650094').click(); " +
-                        "document.getElementById('66405065').value = '" + temperature + "';" +
-                        "document.getElementById('66405075_542650132').click();" +
-                        "document.getElementById('66405078_542650162').click();" +
-                        "document.getElementById('66405129_542650744_DMY').value = '" + curr_date + "';" +
-                        "document.getElementById('66405074_542650161').click();" +
-                        "document.getElementById('66405076_542650156').click();" +
-                        "document.getElementById('66405066_542650082').click();" +
+                webView.loadUrl("javascript:(function() { document.getElementById('87960815_688357155_label').click(); " +
+                        "document.getElementById('87960813').value = '" + employeeID + "'; " +
+                        "document.getElementById('87960820_688357202_label').click(); " +
+                        //"document.getElementById('66405065').value = '" + temperature + "';" +
+                        "document.getElementById('87960821_688357186_label').click();" +
+                        "document.getElementById('87960822_688357192_DMY').value = '" + curr_date + "';" +
+                        "document.getElementById('87960814_688357154_label').click();" +
                         "document.getElementsByClassName('btn small next-button survey-page-button user-generated notranslate')[0].click(); ;})()");
                 webUrl = webView.getUrl();
 
